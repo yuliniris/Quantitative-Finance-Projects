@@ -1,0 +1,37 @@
+# Quantitative-Finance-Projects
+# Trend Prediction for S&P 500 ETF Trust Using LSTM Model
+
+## Problems
+Prediction of movement of S&P 500 ETF Trust
+
+## Methodology
+- Features: technical indicators, time-based factors, rolling statistics, fundamental factors, factors based on cointegration analysis.
+- Data source: Federal bank, Yahoo finance. 
+- Based on correlation analysis, Augmented Dickey-Fuller unit root test, cointegration analysis, and finally, the model uses 18 features.
+- Comparing fine-tuning methods, random search, hyperband, and Bayesian, it applies Bayesian Optimization.
+- comparing two optimization methods, Adam and RMSprop, Adam is slightly better.
+
+## Results
+- The results show sensitivity to the threshold of label.
+
+## Project Report
+the full project report: [Project Report PDF]( .pdf)
+
+## Code Structure
+- data collection: fundamental factor
+- data for cointegration
+- feature creation
+- base model
+- fundamental factor model
+- final model
+- cointegration analysis - R 
+
+
+```
+## Future Work
+- Consider using wavelet transform to separate short-term fluctuations and long-term trends.
+- For cointegration, consider other features, such as ratios of index prices.
+ 
+```
+ 
+
