@@ -19,7 +19,7 @@ Sequence modeling approaches, such as a recurrent neural network, show effective
 - When the threshold for the label is 0.1%, the model only identifies 31% of actual class 1 cases, whereas it can identify 100% of actual class 1 cases, when the threshold for label becomes 0.09%.
 
 ## Project Report
-the full project report: [Project Report PDF]( https://github.com/yuliniris/Quantitative-Finance-Projects/blob/main/Trend-Prediction-Using-LSTM/Trend-Prediction-using-LSTM.pdf)
+the full project report: [Project Report PDF](https://github.com/yuliniris/Quantitative-Finance-Projects/blob/main/Trend-Prediction-Using-LSTM/Report/Trend-Prediction-using-LSTM.pdf)
 
 ## Code Structure
 - data collection: fundamental factor

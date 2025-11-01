@@ -33,7 +33,7 @@
 - Potential reason is the synthetic generated option dataset. vega range of the dataset is [3.07, 224.51], which is far beyond [1, 60]
 
 ## Project Report
-the full project report: [Project Report PDF]( https://github.com/yuliniris/Quantitative-Finance-Projects/blob/main/Optimal-Hedging/Optimal-hedging.pdf)
+the full project report: [Project Report PDF]( https://github.com/yuliniris/Quantitative-Finance-Projects/blob/main/Optimal-Hedging/Report/Optimal-hedging.pdf)
 
 ## Code Structure
 - Geometric Brownian motion simulation
