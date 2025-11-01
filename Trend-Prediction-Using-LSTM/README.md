@@ -15,7 +15,7 @@ Prediction of movement of S&P 500 ETF Trust
 - The results show sensitivity to the threshold of label.
 
 ## Project Report
-the full project report: [Project Report PDF]( .pdf)
+the full project report: [Project Report PDF]( https://github.com/yuliniris/Quantitative-Finance-Projects/blob/main/Trend-Prediction-Using-LSTM/Trend-Prediction-using-LSTM.pdf)
 
 ## Code Structure
 - data collection: fundamental factor

@@ -29,11 +29,11 @@
 ## Known Issues
 - Magnitudes of correction term and the coefficients a, b, c are incorrect.
 - The sign of c is unstable.
-- Entire results show numerial unstable.
+- Entire results show numerical unstable.
 - Potential reason is the synthetic generated option dataset. vega range of the dataset is [3.07, 224.51], which is far beyond [1, 60]
 
 ## Project Report
-the full project report: [Project Report PDF]( .pdf)
+the full project report: [Project Report PDF]( https://github.com/yuliniris/Quantitative-Finance-Projects/blob/main/Optimal-Hedging/Optimal-hedging.pdf)
 
 ## Code Structure
 - Geometric Brownian motion simulation
@@ -53,8 +53,11 @@ the full project report: [Project Report PDF]( .pdf)
 
 ## Future Work
 - If real option datasets are accessible, redo the minimum variance delta hedging part.
-- Consider other methods to generate volatility surface. This is also one of my future research fields I am considering, namely using deep learning to forcast volatility surface or do calibrations.
+- Consider other methods to generate volatility surface. This is also one of my future research fields I am considering, namely using deep learning to forecast volatility surface or do calibrations.
+- Another direct approach is to generate option data from uniform distribution, and then do adjustment with term structure factor and skew or smile factors.
+
 ```
+
 
  
 
