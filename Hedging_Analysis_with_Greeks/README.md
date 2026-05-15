@@ -35,7 +35,7 @@
 
 
 ## Project Report
-the full project report: [Project Report PDF]( https://github.com/yuliniris/Quantitative_Finance_Projects/blob/main/Hedging_Analysis_with_Greeks/Report/Hedging_Analysis_with_Greeks.pdf)
+the full project report: [Project Report PDF]( https://github.com/yuliniris/Quantitative-Finance-Projects/blob/main/Hedging_Analysis_with_Greeks/Report/Hedging_Analysis_with_Greeks.pdf)
 
 ## Code Structure
 - Geometric Brownian motion simulation
