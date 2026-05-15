@@ -47,26 +47,26 @@ Two volatility-surface generators are considered:
 
 - **Quadratic log-moneyness generator:** adopted because it provides smoother and more stable implied volatility dynamics for regression-based hedging analysis.
 
-$$\sigma_{imp} = \text{base\_iv} + \text{curvature\_term} + \text{skew\_term} + \text{noise}$$
+$$\sigma_{\mathrm{imp}} = \mathrm{base\_iv} + \mathrm{curvature\_term} + \mathrm{skew\_term} + \mathrm{noise}$$
 
 base_iv: control the ATM volatility regime
 
-$$\text{base\_iv} = \text{base}_0 \cdot \left(1 + \alpha \cdot e^{-\text{decay} \cdot T}\right)$$
+$$\mathrm{base\_iv} = \mathrm{base}_0 \cdot \left(1 + \alpha \cdot e^{-\mathrm{decay} \cdot T}\right)$$
 
 base_0: use VIX-index as reference
 
 curvature_term: create smile/smirk convexity
 
-$$\text{curvature\_term} = \left(\text{curvature}_0 + \text{curvature}_1 \cdot e^{-\text{curvature\_decay} \cdot T}\right) \cdot x^2$$
+$$\mathrm{curvature\_term} = \left(\mathrm{curvature}_0 + \mathrm{curvature}_1 \cdot e^{-\mathrm{curvature\_decay} \cdot T}\right) \cdot x^2$$
 
 skew_term: create skew and short-dated ones have stronger skew
 
-$$\text{skew\_term} = \text{skew}_0 \cdot e^{-\text{skew\_decay}\cdot T} \cdot x$$
+$$\mathrm{skew\_term} = \mathrm{skew}_0 \cdot e^{-\mathrm{skew\_decay}\cdot T} \cdot x$$
 
 noise: add randomness
 in order to avoid the dominance of noise, it needs to keep noise_std small for time-series dynamics and moneyness-dependent as well.
 
-$$\text{noise} \sim \mathcal{N}\left(0,\ \text{noise\_std}^2 \cdot (1 + \text{wing\_noise\_scale}|x|)^2\right)$$
+$$\mathrm{noise} \sim \mathcal{N}\left(0,\ \mathrm{noise\_std}^2 \cdot (1 + \mathrm{wing\_noise\_scale}|x|)^2\right)$$
 
 x : log-moneyness
 
