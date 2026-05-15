@@ -124,7 +124,7 @@ The fitted correction curve is negative and roughly U-shaped across the admissib
 The empirical bucket-level correction serves as a diagnostic check against the fitted correction curve.
 
 ## Project Report
-The full project report: [Project Report PDF](https://github.com/yuliniris/Quantitative_Finance_Projects/blob/main/Minimum_Variance_Delta_Hedging/Report/Minimum_Variance.pdf)
+The full project report: [Project Report PDF](https://github.com/yuliniris/Quantitative-Finance-Projects/blob/main/Minimum_Variance_Delta_Hedging/Report/Minimum_Variance.pdf)
 
 ## Code Structure
 - **SVI-based generation:**  initial parametric implied volatility surface, later abandoned due to numerical instability.
