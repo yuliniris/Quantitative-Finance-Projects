@@ -66,7 +66,15 @@ $$\mathrm{skew\_term} = \mathrm{skew}_0 \cdot e^{-\mathrm{skew\_decay}\cdot T} \
 noise: add randomness
 in order to avoid the dominance of noise, it needs to keep noise_std small for time-series dynamics and moneyness-dependent as well.
 
-$$\mathrm{noise} \sim \mathcal{N}\left(0,\ \mathrm{noise\_std}^2 \cdot (1 + \mathrm{wing\_noise\_scale}|x|)^2\right)$$
+$$
+\mathrm{noise} 
+\sim 
+\mathcal{N}
+\left(0,\ 
+\mathrm{noise\_std}^2 
+\left (1 + \mathrm{wing\_noise\_scale}|x|)^2
+\right)
+$$
 
 x : log-moneyness
 
