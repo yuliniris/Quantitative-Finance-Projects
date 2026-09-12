@@ -1,5 +1,4 @@
-# Quantitative-Finance-Projects
-# Project: the Use of the Monte Carlo Scheme to Price Exotic Options
+# Project: Monte Carlo Pricing
 
 ## Problem and Methodology
 - Using the Euler-Maruyama scheme for initially simulating the underlying price paths. 

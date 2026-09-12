@@ -23,10 +23,12 @@ The implementation follows the research's development from theory to empirical e
 ### Theoretical formula
 The minimum variance delta is:
 
-$$\Delta_{MV} = \Delta_{BS} + \text{vega}_{BS} \cdot \frac{\mathbb{E}[d\sigma_{imp}]}{dS}$$
+$$\Delta_{MV} = \Delta_{BS} + \text{vega}_{BS} \cdot \frac{d\mathbb{E}[\sigma_{imp}]}{dS}$$
+
+- It is the local asymptotic expansion and optimal instantaneously. The hedge ratio minimizes the variance of the hedging error over an infinitesimal time interval, rather than achieving global replication over the option’s life.
 
 ### Empirical structure for the volatility sensitivity
-$$\frac{\mathbb{E}[d\sigma_{imp}]}{dS} = \frac{1}{S_t\sqrt{T}}\left(a + b\Delta_{BS} + c\Delta_{BS}^2\right)$$
+$$\frac{d\mathbb{E}[\sigma_{imp}]}{dS} = \frac{1}{S_t\sqrt{T}}\left(a + b\Delta_{BS} + c\Delta_{BS}^2\right)$$
 
 Substituting into the MV delta formula gives the regression specification:
 
@@ -40,8 +42,10 @@ the correction term:
 
 $$\Delta_{MV} - \Delta_{BS} = \frac{\text{vega}_{BS}}{S_t\sqrt{T}}\left(\hat{a} + \hat{b}\Delta_{BS} + \hat{c}\Delta_{BS}^2\right)$$
 
+- The changes discussed here, including dV, dS, dσ_imp, are observed in the real world, not the artificial risk-neutral measure. The negative correlation of underlying price and implied volatility is a real-world empirical fact, not from risk-neutral pricing.
+
 ### Synthetic option panel generation  
-Two volatility-surface generators are considered:
+Two volatility-surface generators are considered for the empirical implementations (first attempt and revised approach):
 
 - **SVI-based generator:** abandoned because the nonlinear square-root structure and parameter collinearity produce unstable implied volatility sensitivities. 
 
@@ -49,22 +53,11 @@ Two volatility-surface generators are considered:
 
 $$\sigma_{\mathrm{imp}} = \mathrm{base\_iv} + \mathrm{curvature\_term} + \mathrm{skew\_term} + \mathrm{noise}$$
 
-base_iv: control the ATM volatility regime
-
 $$\mathrm{base\_iv} = \mathrm{base}_0 \cdot \left(1 + \alpha \cdot e^{-\mathrm{decay} \cdot T}\right)$$
-
-base_0: use VIX-index as reference
-
-curvature_term: create smile/smirk convexity
 
 $$\mathrm{curvature\_term} = \left(\mathrm{curvature}_0 + \mathrm{curvature}_1 \cdot e^{-\mathrm{curvature\_decay} \cdot T}\right) \cdot x^2$$
 
-skew_term: create skew and short-dated ones have stronger skew
-
 $$\mathrm{skew\_term} = \mathrm{skew}_0 \cdot e^{-\mathrm{skew\_decay}\cdot T} \cdot x$$
-
-noise: add randomness
-in order to avoid the dominance of noise, it needs to keep noise_std small for time-series dynamics and moneyness-dependent as well.
 
 $$
 \mathrm{noise} \sim \mathcal{N}\left(0,\ \mathrm{noise\\_std}^{2} \left(1 + \mathrm{wing\\_noise\\_scale} \cdot |x|\right)^{2} \right)
@@ -74,8 +67,34 @@ x : log-moneyness
 
 $x = \log(E/F)$ where $E$ is the strike price and $F = Se^{rT}$ is the forward price
 
-- Panel data structure
-Track each option contract through time so that daily changes are computed along the same contract path rather than across different cross-sectional instruments.
+- **Principles of functional form:**
+1) base_iv: control the ATM volatility regime
+
+2) base_0: use VIX index as reference
+
+3) curvature_term: create smile/smirk convexity; term-dependent; short-dated smiles are morel convex, because near-expiry gamma risk is priced aggressively
+
+4) skew_term: create skew; negative; time-dependent; short-dated ones have stronger skew
+
+5) noise: add randomness; smaller near ATM, and larger in far OTM. To avoid the dominance of noise, it is necessary to keep noise_std small for time-series dynamics and moneyness-dependent as well
+
+6) Log-moneyness: log-forward moneyness; to make cross-maturity comparison more consistent.
+
+<br>
+
+
+- **Panel data structure:** track each option contract through time so that daily changes are computed along the same contract path rather than across different cross-sectional instruments.
+
+### Methodology summary
+- The following is the summary of the process of trials and failures.
+
+| What Was Tried | What Failed | Why | Next Step |
+|----|---|---|---|
+| Strike grid and VIX index | The binary behavior of deltas' distribution | Lack of real-world market behavior, volatility surface and term structure | Try parametric model |
+| SVI volatility surface | Wrong magnitudes of coefficients a, b, c; inconsistence of sign of c | Nonlinear square-root structure + parameter collinearity → unstable ∂[σ_impl]/∂S, which conflicts with the implicit assumption of empirical implementation | Switch to quadratic log-moneyness |
+| Cross-sectional strike generation | Not time-series dataset of option price for the same contract | Differences are across instruments, not within a path → destroys Hull-White regression logic | Track each contract from issue date to maturity; time-series hedging along a path |
+| Bucket-level quadratic regression | Coefficients unstable, numerically fragile | Delta range per bucket too narrow → hard to identify a stable quadratic | Estimate coefficients using all options in the rolling window, not within each delta bucket; report hedging performance based using observation-time delta bucket |
+
 
 ### Pooled panel regression for empirical estimation
 - Estimate coefficients in pooled rolling-window regressions rather than inside narrow delta buckets, which improves numerical stability.
@@ -126,7 +145,7 @@ The fitted correction curve is negative and roughly U-shaped across the admissib
 The empirical bucket-level correction serves as a diagnostic check against the fitted correction curve.
 
 ## Project Report
-The full project report: [Project Report PDF](https://github.com/yuliniris/Quantitative-Finance-Projects/blob/main/Minimum_Variance_Delta_Hedging/Report/Minimum_Variance.pdf)
+Full project report: [Project Report PDF](https://github.com/yuliniris/Quantitative-Finance-Projects/blob/main/Minimum_Variance_Delta_Hedging/Report/Minimum_Variance.pdf)
 
 ## Code Structure
 - **SVI-based generation:**  initial parametric implied volatility surface, later abandoned due to numerical instability.
@@ -145,16 +164,18 @@ The full project report: [Project Report PDF](https://github.com/yuliniris/Quant
 - The adopted synthetic implied-volatility surface is smoother and more deterministic than real option markets, which likely inflates the measured hedging gains.
 - The unbalanced panel can implicitly overweight longer-maturity contracts.
 - Transaction costs, liquidity constraints, bid-ask spreads, and execution slippage are not included.
- 
-## References
-- John Hull and Alan White. *Optimal Delta Hedging for Options*. Journal of Banking and Finance, Vol. 82, Sept 2017: 180-190, May, 2017
-- CQF project workshop materials.
- 
+
 ## Future Work
 Possible extensions include:
 - Introduce autoregressive dynamics into the implied-volatility generator, so skew and curvature evolve over time rather than remaining too rigid.
 - Test the framework on real option-chain data to benchmark gains against empirical studies rather than favorable synthetic dynamics.
 - Extend the analysis to put options separately and compare whether the fitted correction behaves differently across calls and puts.
+ 
+## References
+- John Hull and Alan White. *Optimal Delta Hedging for Options*. Journal of Banking and Finance, Vol. 82, Sept 2017: 180-190, May, 2017
+- CQF project workshop materials.
+ 
+
 
 
 
