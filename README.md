@@ -41,35 +41,35 @@
 ### Hedging Analysis with Greeks
 - This project studies the profitability and risk of delta-hedged option portfolios. It implements numerical simulation of geometric Brownian motion via Euler-Maruyama, Milstein schemes and Brownian bridge with Sobol sequences. It also examines the role of Gamma, gamma scalping and regime shift in realized volatility in shaping the profitability of a delta-hedged option position.
 - Skills: Geometric Brownian motion(GBM) simulations,  Euler-Maruyama scheme and Milstein scheme, error analysis using terminal-value RMSE and log-log convergence plots, Sobol low-discrepancy sequences and Brownian bridge path construction, RMSE-based variance reduction comparison: pseudo-random vs Sobol + Brownian bridge, mathematical derivatives of mark-to-market P&L for delta-hedged portfolios, Gamma scalping P&L approximation, convexity premium, regime-shift analysis for time-varying realized volatility.
-- Project link: (https://github.com/yuliniris/Quantitative_Finance_Projects/tree/main/Hedging_Analysis_with_Greeks)
+- Project link: (https://github.com/yuliniris/Quantitative-Finance-Projects/tree/main/Hedging_Analysis_with_Greeks)
 
 ### Variance Swap Replication
 - This project is an extension of the project *Hedging Analysis with Greeks*. It extends the framework from delta-hedged vanilla call options to variance-linked exposure. This framework mirrors how variance swaps and VIX are priced and hedged on volatility desks. It develops connections from three perspectives: 1) the continuous-time log-contract replication identity; 2) the trading interpretation through a short log contract and constant-dollar stock hedge; 3) the static pricing of the fair variance strike implied by the OTM option strip.
 - Skills: derivation of theoretical formulae: variance swap replication identity via Itô’s lemma, the static option strip replication formula; numerical experiments: discrete realized-variance estimators, normalized dollar-gamma exposures, a VIX-style discretization of the continuous option-strip formula.
-- Project link: (https://github.com/yuliniris/Quantitative_Finance_Projects/tree/main/Variance_Swap_Replication)
+- Project link: (https://github.com/yuliniris/Quantitative-Finance-Projects/tree/main/Variance_Swap_Replication)
 
 
 ### Minimum Variance Delta Hedging 
 - This project studies hedge-ratio misspecification in delta hedging, which can arise when implied volatility co-moves with the underlying asset price and creates residual volatility exposure. The project implements a minimum-variance delta hedging framework inspired by Hull and White's research. It uses a synthetic SPY option panel built from historical SPY prices, VIX as an implied-volatility anchor, and a quadratic log-moneyness volatility surface. The purpose is to estimate a correction to standard Black-Scholes delta by incorporating the predictable component of implied volatility changes that co-move with the underlying asset price. 
 - Skills: derivation of theoretical formula, empirical structure, synthetic option panel generations (SVI-based generator, quadratic log-moneyness generator), pooled panel regression for empirical estimation(raw dataset and centered-basis), empirical bucket-level average correction.
-- Project link: (https://github.com/yuliniris/Quantitative_Finance_Projects/tree/main/Minimum_Variance_Delta_Hedging)
+- Project link: (https://github.com/yuliniris/Quantitative-Finance-Projects/tree/main/Minimum_Variance_Delta_Hedging)
 
 
 ### Corporate Credit Risk Modeling
 - This project implements an IRB-inspired corporate credit-risk modeling framework, for borrower-level PD estimation and calibration, internal rating-band construction, and IFRS 9-style lifetime Expected Credit Loss (ECL) calculation.
 - Skills: logistic regression with Weight of Evidence (WoE) feature engineering, Prior Correction for probability calibration under severe class imbalance, rating-band design with Wilson, Clopper-Pearson, O/E, and chi-square validation, 12-month and lifetime ECL calculation, multi-period PD projection using three approaches (CAR, matrix powering, and S&P transition-rate anchoring), stochastic LGD and EAD modeling, Gaussian copula dependence modeling for the Monte Carlo simulation of lifetime ECL.
-- Project link: (https://github.com/yuliniris/Quantitative_Finance_Projects/tree/main/Corporate_Credit_Risk_Modeling)
+- Project link: (https://github.com/yuliniris/Quantitative-Finance-Projects/tree/main/Corporate_Credit_Risk_Modeling)
 
 ###  Monte Carlo Pricing
 - Calculate option prices of various option types based on the simulation of underlying price paths, which are simulated using the Euler-Maruyama scheme
 - Skills: the Euler-Maruyama scheme,  Monte Carlo Scheme
-- Project link: (https://github.com/yuliniris/Quantitative_Finance_Projects/tree/main/Monte_Carlo_Pricing)
+- Project link: (https://github.com/yuliniris/Quantitative-Finance-Projects/tree/main/Monte_Carlo_Pricing)
 
 
 ### Market Prediction using LSTM 
 - Use LSTM neural networks on historical S&P 500 data to do prediction.
 - Skills: feature engineering, correlation analysis, Augmented Dickey-Fuller unit root test, cointegration analysis, fine-tuning of parameters
-- Project link: (https://github.com/yuliniris/Quantitative_Finance_Projects/tree/main/Trend_Prediction_Using_LSTM)
+- Project link: (https://github.com/yuliniris/Quantitative-Finance-Projects/tree/main/Trend_Prediction_Using_LSTM)
 
 
  
