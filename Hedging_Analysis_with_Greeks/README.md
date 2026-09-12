@@ -78,7 +78,8 @@ The log-log plot highlights the difference in convergence speed: the pseudo-rand
 
 ### Gamma Scalping Simulation
 
-![Gamma Scalping Simulation](Results/Gamma_scalping_regime_shift.png)
+![Gamma Scalping Simulation](Results/gamma_scalping_regime_shift.png)
+
 
 - The plots show gamma scalping simulation and regime shift involved.
 
