@@ -22,6 +22,7 @@
 - Variance swap replication identity via Itô's lemma.
 
 The integral form is:
+
  $$ 
  \int_0^T \frac{dS_t}{S_t} - \log \frac{S_T}{S_0} = \frac{1}{2} \int_0^T \sigma_t^2 dt \quad \text{replication 1 }
  $$
