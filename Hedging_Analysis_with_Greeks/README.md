@@ -60,7 +60,7 @@ Two simulations are:
 
 ### Log-log Convergence: Euler vs Milstein
 
-![Log-log Convergence: Euler vs Milstein](Results/Log_log_convergence.png)
+![Log-log Convergence: Euler vs Milstein](Results/log_log_convergence.png)
 
 The plot shows that Euler slope ≈ 0.5 and Milstein slope ≈ 1, derived from root mean square error (RMSE) values. Euler error is larger than Milstein error, and the error gap becomes more pronounced at smaller dt, consistent with strong-order 0.5 vs 1.
 
