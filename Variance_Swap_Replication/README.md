@@ -62,11 +62,17 @@ $$ \mathbb{E}[g(S_T)|S_t] = \mathbb{E}\left[ \log\left(\frac{S_T}{F}\right) \rig
 
 Since:
 
-$$ \mathbb{E}^{\mathbb{Q}} \left[ \int_0^T \sigma_t^2 dt \right] = -2 \mathbb{E}^{\mathbb{Q}} \left[ \log \frac{S_T}{S_0} \right] $$
+$$
+\mathbb{E}^{\mathbb{Q}} \left[ \int\limits_{0}^{T} \sigma_{t}^{2} \, dt \right] = -2 \, \mathbb{E}^{\mathbb{Q}} \left[ \log \frac{S_T}{S_0} \right]
+$$
 
-$$ \mathbb{E}^{\mathbb{Q}} \left[ \int_0^T \sigma_t^2 dt \right] = 2 \left[ \int_0^F \widetilde{V}_{put}(E) \frac{1}{E^2} dE + \int_F^\infty \widetilde{V}_{call}(E) \frac{1}{E^2} dE \right] $$
+$$
+\mathbb{E}^{\mathbb{Q}} \left[ \int\limits_{0}^{T} \sigma_{t}^{2} \, dt \right] = 2 \left[ \int_{0}^{F} \widetilde{V}_{put}(E) \frac{1}{E^{2}} \, dE + \int_{F}^{\infty} \widetilde{V}_{call}(E) \frac{1}{E^{2}} \, dE \right]
+$$
 
-$$ E_{var} = \mathbb{E}^{\mathbb{Q}}[RV_T] = \mathbb{E}^{\mathbb{Q}} \left[ \frac{1}{T} \int_0^T \sigma_t^2 dt \right] $$
+$$
+E_{var} = \mathbb{E}^{\mathbb{Q}}[RV_T] = \mathbb{E}^{\mathbb{Q}} \left[ \frac{1}{T} \int\limits_{0}^{T} \sigma_{t}^{2} \, dt \right]
+$$
 
 therefore:
 
