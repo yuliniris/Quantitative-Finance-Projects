@@ -51,7 +51,9 @@ $$ p(S_T = E) = \frac{d^2 \widetilde{V}_{call}(E, T)}{dE^2} = \frac{d^2 \widetil
 
 The static option strip replication formula is:
 
-$$\mathbb{E}[g(S_T)|S_t] = g(F) + \int_0^F \widetilde{V_{\text{put}}}(E)\,g''(E)\,dE + \int_F^\infty \widetilde{V_{\text{call}}}(E)\,g''(E)\,dE \quad \text{replication 2 } $$
+$$
+\mathbb{E}[g(S_T)|S_t] = g(F) + \int_0^F \widetilde{V_{\text{put}}}(E) g''(E)\,dE + \int_F^\infty \widetilde{V_{\text{call}}}(E) g''(E) dE \quad \text{replication 2 } 
+$$
 
 It is the static-replication formula, requires no rebalancing, and is model-independent.
 
