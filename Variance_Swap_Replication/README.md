@@ -162,7 +162,7 @@ The left panel, the full OTM-option strip, depends on the market, while the righ
 The 1/E^2 kernel assigns greater mechanical weight to low strikes; with negative equity skew, elevated downside-puts prices further increase their contribution.
 
 ## Project Report
-Full project report *Variance Swap Replication*: [Project Report PDF](https://github.com/yuliniris/Quantitative-Finance-Projects/blob/main/variance_swap_replication/Report/variance_swap_replication.pdf)
+Full project report *Variance Swap Replication*: [Project Report PDF](https://github.com/yuliniris/Quantitative-Finance-Projects/blob/main/Variance_Swap_Replication/Report/variance_swap_replication.pdf)
 
 Full project report *Hedging Analysis with Greeks*: [Project Report PDF](https://github.com/yuliniris/Quantitative-Finance-Projects/blob/main/Hedging_Analysis_with_Greeks/Report/Hedging_Analysis_with_Greeks.pdf)
 
