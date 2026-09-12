@@ -22,9 +22,11 @@
 - Variance swap replication identity via Itô's lemma.
 
 The integral form is:
- $$ \int_0^T \frac{dS_t}{S_t} - \log \frac{S_T}{S_0} = \frac{1}{2} \int_0^T \sigma_t^2 dt \quad \text{replication 1 }$$
+ $$ 
+ \int_0^T \frac{dS_t}{S_t} - \log \frac{S_T}{S_0} = \frac{1}{2} \int_0^T \sigma_t^2 dt \quad \text{replication 1 }
+ $$
  
-$ \int_0^T \sigma_t^2 dt$ is the integrated realized variance, continuously sampled log-price quadratic variation, $\langle \log S \rangle_T$
+$\int_0^T \sigma_t^2 dt$ is the integrated realized variance, continuously sampled log-price quadratic variation, $\langle \log S \rangle_T$
 
 - Delta-hedged log-contract portfolio construction(omit cash account).
 
@@ -70,7 +72,7 @@ therefore:
 
 $$ E_{var} = \frac{2}{T} \left[ \int_0^F \widetilde{V}_{put}(E) \frac{1}{E^2} dE + \int_F^\infty \widetilde{V}_{call}(E) \frac{1}{E^2} dE \right] $$
 
-$ E_{var} : $ fixed leg, pre-agreed at inception, variance level
+$E_{var} :$ fixed leg, pre-agreed at inception, variance level
 
 **Numerical:**
 - Discrete form of realized log-return variance(benchmark).
@@ -103,7 +105,7 @@ The formula is:
 
 $$ VIX^2 \approx \frac{2}{T} \sum_i \frac{\Delta E_i}{E_i^2} Q_i(E_i) - \frac{1}{T} \left( \frac{F}{E_0} - 1 \right)^2 $$
 
-Common numerical definition: $ \Delta E_i = \frac{E_{i+1} - E_{i-1}}{2} $ , which is the trapezoidal quadrature rule.
+Common numerical definition: $\Delta E_i = \frac{E_{i+1} - E_{i-1}}{2}$ , which is the trapezoidal quadrature rule.
 
 **Notes:**
 -  Two replications:
