@@ -89,7 +89,7 @@ The log-log plot highlights the difference in convergence speed: the pseudo-rand
 
 
 ## Project Report
-Full project report: [Project Report PDF]( https://github.com/yuliniris/Quantitative-Finance-Projects/blob/main/Hedging_Analysis_with_Greeks/Report/Hedging_Analysis_with_Greeks.pdf)
+Full project report: [Project Report PDF](https://drive.google.com/file/d/1AFW8EYxn0f1dnVE9EaP5ZuVQts7yScqH/view?usp=drive_link)
 
 ## Code Structure
 - **GBM_simulation:**   Euler-Maruyama and Milstein GBM paths simulation

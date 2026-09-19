@@ -151,7 +151,7 @@ The plot shows right-skewed, mass near zero, and occasional large-loss scenarios
 
  
 ## Project Report
-Full project report: [Project Report PDF](https://github.com/yuliniris/Quantitative-Finance-Projects/blob/main/Corporate_Credit_Risk_Modeling/Report/Credit_Risk.pdf)
+Full project report: [Project Report PDF](https://drive.google.com/file/d/1OyOMhjobDCd06tzvp3tF_lC6xHFi8rm5/view?usp=drive_link)
 
 ## Code Structure
 - **Dataset_analysis:**   Feature significance, base logistic model.
